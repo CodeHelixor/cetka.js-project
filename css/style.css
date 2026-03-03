@@ -372,7 +372,13 @@ a {
 /* Page layout (banner + main) */
 .page-wrap {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   background: hsl(var(--background));
+}
+
+.page-wrap main {
+  flex: 1;
 }
 
 .page-banner {
