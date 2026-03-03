@@ -1,0 +1,24 @@
+CONTACT FORM – SMTP (FreeHosting.com) SETUP
+
+1. In FreeHosting cPanel: create or confirm email account info@cetka.tj and note its password.
+
+2. Install PHPMailer on your PC in the site folder:
+   - Open terminal in the html folder (e.g. c:\Users\HomePC\Downloads\compare\html).
+   - Run: composer require phpmailer/phpmailer
+   - Upload the whole site including the "vendor" folder to FreeHosting.
+
+3. On the server: open send-mail.php and set the password:
+   - Find: $MAIL_PASSWORD = '$1234Song';
+   - Replace with the real info@cetka.tj mailbox password and save.
+
+4. Upload these files to FreeHosting:
+   - send-mail.php
+   - contact.html (updated form)
+   - js/main.js (updated)
+   - vendor/ (folder from Composer)
+
+5. Test: open your contact page, fill the form, submit. You should get a “Thank you” message and receive the email at info@cetka.tj.
+
+Troubleshooting:
+- If it fails, check contact.html?sent=0&err=... in the address bar for the error.
+- Ensure SMTP is allowed and the password is correct in cPanel webmail.
